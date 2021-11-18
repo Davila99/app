@@ -17,10 +17,8 @@
         @foreach ($users as $user)
 
             <tr>
-                <td><img src="{{ asset('storage') . '/' . $user->foto }}" width="100"
-                        class="rounded float-start" alt=""></td>
-                <td>{{ $user->nombre }}</td>
-                <td>{{ $user->correo }}</td>
+                <td>{{ $user->name }}</td>
+                <td>{{ $user->email }}</td>
                 <td>
                     <form action="{{ url('/user/' . $user->id) }}" method="post" class="d-inline">
                         @csrf
