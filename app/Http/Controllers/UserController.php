@@ -8,11 +8,12 @@ class UserController extends Controller
 {
     public function index()
     {
-
+        $datos['users'] = User::paginate(5);
+        return view('user/index', $datos);
     }
     public function destroy($id)
     {
         User::destroy($id);
-        return redirect('turno/')->with('mensaje', 'Turno eliminada con exito');
+        return redirect('user/')->with('mensaje', 'Usuario eliminada con exito');
     }
 }
